@@ -19,7 +19,6 @@ const {
 require('dotenv').config();
 const configValues = process.env;
 
-const PORT = configValues.PORT || 4300;
 
 async function connectToDatasource() {
     try {
@@ -95,5 +94,7 @@ server.applyMiddleware({
     path:"/graphql"
 })
 
+app.listen({ port: configValues.PORT || 4000 }, () => {
+    console.log(`🚀 Server ready at http://localhost:${configValues.PORT}${server.graphqlPath}`)
+});
 
-app.listen(PORT, () => console.log(`🚀 Server ready at http://localhost:${configValues.PORT}${server.graphqlPath}`));
