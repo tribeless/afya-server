@@ -19,6 +19,8 @@ const {
 require('dotenv').config();
 const configValues = process.env;
 
+const PORT = configValues.PORT || 4300;
+
 async function connectToDatasource() {
     try {
         await mongoose.connect(configValues.DB_CONNECTION_URI, {
@@ -93,4 +95,4 @@ server.applyMiddleware({
 })
 
 
-app.listen(configValues.PORT, () => console.log(`🚀 Server ready at http://localhost:${configValues.PORT}${server.graphqlPath}`));
+app.listen(PORT, () => console.log(`🚀 Server ready at http://localhost:${configValues.PORT}${server.graphqlPath}`));
