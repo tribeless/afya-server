@@ -54,7 +54,11 @@ class SessionsApi {
 
     async logOut(res) {
         try {
-            res.clearCookie("jwt");
+            res.clearCookie("jwt",{
+                httpOnly: false,
+                path:"/",
+                sameSite:"none"
+            });
             return {
                 status: true,
                 message: "successfully logged you out"
