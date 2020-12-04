@@ -2,9 +2,9 @@
   "name": "afya-server",
   "version": "1.0.0",
   "description": "afya project server",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server/app.js"
+    "start": "node server/index.js"
   },
   "author": "Brian Kyole",
   "license": "ISC",
