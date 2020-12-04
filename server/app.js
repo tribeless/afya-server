@@ -48,7 +48,6 @@ const server = new ApolloServer({
         connection,
         res
     }) => {
-        //get token from headers
         if (connection) {
             return connection.context;
         } else {

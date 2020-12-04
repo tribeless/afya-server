@@ -41,9 +41,8 @@ class SessionsApi {
 
         res.cookie('jwt', token, {
             httpOnly: true,
-            secure: configValues.NODE_ENV == "production", //on https
+            secure: configValues.NODE_ENV == "production", 
             maxAge: 1000 * 60 * 60 * 24 * 1
-            //domain: 'example.com', //set your domain
         })
         return {
             status: true,
